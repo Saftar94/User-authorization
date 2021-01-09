@@ -1,0 +1,29 @@
+{%extends 'intapp/base.html'%}
+
+{%block title%}
+  Рассказать о себе
+{%endblock%}
+
+
+
+{%block content%}
+<div class="features">
+    <h1>Рассказать о себе</h1>
+
+ <form action="" method="POST">
+     {% csrf_token %}
+     <p>{{ form.title }}</p>
+     <p>{{ form.password }}</p>
+     <span>{{ error }}</span>
+
+     <button class="btn btn-success" type="submit">Добавить О себе</button>
+
+
+<!--     <li class="nav-item">-->
+<!--        <a class="nav-link" href="{% url 'register' %}">Регистрация</a>-->
+<!--     </li>-->
+
+
+ </form>
+</div>
+{%endblock%}

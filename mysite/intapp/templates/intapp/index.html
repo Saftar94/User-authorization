@@ -1,0 +1,35 @@
+{%extends 'intapp/base.html'%}
+
+{%block title%}
+  Главная страница
+{%endblock%}
+
+
+
+{%block content%}
+  <div class="features">
+    <h1>Новости на сайте 2</h1>
+
+      {% if intapp %}
+
+  {% for el in intapp %}
+  <div class=" alert alert-warning">
+      {{el.title}}<br>
+      {{el.pasword}}<br>
+      {{el.full_text}}<br>
+      {{el.date}}<br>
+      <a href="{% url 'news-detail' el.id %}" class="nav-link">Читать детальнее</a>
+      <a href="{% url 'news-update' el.id %}" class="nav-link">UpDate</a>
+      <a href="{% url 'Delete' el.id %}" class="nav-link">Delete</a>
+  </div>
+    {%endfor%}
+
+      {%else%}
+        <p>У вас нет записей!</p>
+      {% endif %}
+
+     <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}">create</a>
+      </li>
+
+{%endblock%}

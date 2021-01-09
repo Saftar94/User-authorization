@@ -1,0 +1,24 @@
+{%extends 'intapp/base.html'%}
+
+{%block title%}
+  Удаление статьи
+{%endblock%}
+
+
+
+{%block content%}
+ <div class="features">
+     <h1>Форма по добавлению статей</h1><br>
+
+     <form action="" method="POST">
+         {% csrf_token %}
+         <p>{{ form.title }}</p><br>
+         <p>{{ form.pasword }}</p><br>
+         <p>{{ form.full_text }}</p><br>
+         <p>{{ form.date }}</p><br>
+         {{ error }}</span><span>
+
+         <button class="btn btn-success" type="submit">Удалить статью</button>
+        </form>
+     </div>
+{%endblock%}
